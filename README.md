@@ -1,16 +1,11 @@
-# udp_get_ip_and_send_hello
+# udp_send_router
 
-A new Flutter project.
+Hello there :)
 
-## Getting Started
+This program looks for the routerIP your device is connected on and sends it an udp message
 
-This project is a starting point for a Flutter application.
+#### This app is part of a project to make communication between 2 androids (IOS Later maybe) I wont be handling the future errors so please fork me.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+More info on the beautiful sources here :
+  - [UDP Functions](https://blog.jamesslocum.com/post/77759061182/udp-socket-programming-with-dart-unicast-and)
+  - [Wifi IP scanner](https://pub.dev/packages/wifi_info_plugin_plus)
