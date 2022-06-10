@@ -2,7 +2,7 @@
 
 Hello there :)
 
-This program looks for the routerIP your device is connected on and sends it an udp message
+This program looks for the routerIP your device is connected on and sends it an udp message. It also writes on the consol the messages that are send to it witch is usefull when combined with [udp_echo](https://github.com/Zbirenumero0/udp_echo) on the receiving device
 
 #### This app is part of a project to make communication between 2 androids (IOS Later maybe) I wont be handling the future errors so please fork me.
 
