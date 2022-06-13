@@ -17,13 +17,13 @@ Future<String> getRouterIP () async {
   return wifiDeviceInfoObjectLUL != null ? wifiDeviceInfoObjectLUL.routerIp.toString() : "WifiInfoPlugin.wifiDetails returned null";
 }
 
-void udpSender (String address, int port) {
-  RawDatagramSocket.bind(InternetAddress.anyIPv4, port).then((RawDatagramSocket socket){
+void udpSender (String address, String message) {
+  RawDatagramSocket.bind(InternetAddress.anyIPv4, 62526).then((RawDatagramSocket socket){
     //sending a hello to the RouterIP with UDP
     var destinationAddress = InternetAddress(address);
-    String message = String.fromCharCodes("hello".codeUnits);
-    socket.send(message.codeUnits, destinationAddress, port);
-    print('ENVOI Send Message to $address:$port // Message is : ${message.trim()}');
+    String lettre = String.fromCharCodes(message.codeUnits);
+    socket.send(lettre.codeUnits, destinationAddress, 62526);
+    print('ENVOI Send Message to $address:62526 // Message is : ${lettre.trim()}');
   });
 }
 
@@ -48,7 +48,7 @@ void udpRouterHello () async{
 
   RawDatagramSocket.bind(InternetAddress.anyIPv4, portRouter).then((RawDatagramSocket socket){
     udpreceiver();
-    udpSender(addressRouter, portRouter);
+    udpSender(addressRouter, "hello");
   });
 }
 
