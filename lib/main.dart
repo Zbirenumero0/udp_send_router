@@ -27,13 +27,13 @@ void udpSender (String address, int port) {
   });
 }
 
-void udpreceiver (String address, int port){
+void udpreceiver (){
   RawDatagramSocket.bind(InternetAddress.anyIPv4, 62526).then((RawDatagramSocket socket){
     socket.listen((RawSocketEvent e){
       Datagram? d = socket.receive();
       if (d == null) return;
       String message = String.fromCharCodes(d.data);
-      print('RECEPTION Received Message from $address:$port // Message is : ${message.trim()}');
+      print('RECEPTION Received Message from ${d.address}:${d.port} // Message is : ${message.trim()}');
     });
   });
 }
@@ -47,7 +47,7 @@ void udpRouterHello () async{
   print('INFO Router Adress is : $addressRouter:$portRouter');
 
   RawDatagramSocket.bind(InternetAddress.anyIPv4, portRouter).then((RawDatagramSocket socket){
-    udpreceiver(addressRouter, portRouter);
+    udpreceiver();
     udpSender(addressRouter, portRouter);
   });
 }
